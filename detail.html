@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Detail</title>
+</head>
+<body>
+    <header class="header header__dark">
+        <div class="wrapper header__wrapper">
+          <h1 class="header__text">Where in the world ?</h1>
+          <button class="header__mode">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 10.999c1.437.438 2.562 1.564 2.999 3.001.44-1.437 1.565-2.562 3.001-3-1.436-.439-2.561-1.563-3.001-3-.437 1.436-1.562 2.561-2.999 2.999zm8.001.001c.958.293 1.707 1.042 2 2.001.291-.959 1.042-1.709 1.999-2.001-.957-.292-1.707-1.042-2-2-.293.958-1.042 1.708-1.999 2zm-1-9c-.437 1.437-1.563 2.562-2.998 3.001 1.438.44 2.561 1.564 3.001 3.002.437-1.438 1.563-2.563 2.996-3.002-1.433-.437-2.559-1.564-2.999-3.001zm-7.001 22c-6.617 0-12-5.383-12-12s5.383-12 12-12c1.894 0 3.63.497 5.37 1.179-2.948.504-9.37 3.266-9.37 10.821 0 7.454 5.917 10.208 9.37 10.821-1.5.846-3.476 1.179-5.37 1.179z"
+                />
+              </svg>
+            </span>
+            <span class="header__mode-text">Dark mode</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="countries countries__dark">
+        <div class="wrapper countries__wrapper">
+            <div class="countries__filter">
+                <div class="countries__filter-search">
+                    <a href="index.html" class="countries__back-btn">
+                        <svg class="countries__back-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                        <span>Back</span>
+                    </a>
+                </div>
+              </div>
+              <div class="countries__country-information">
+                  
+              </div>
+        </div>
+    </main>
+
+    <script id="countryTemplate" type="text/ractive">
+        {{#country}}
+        <div class="countries__image-div">
+            <img src={{flag}} alt="" class="countries__image">
+        </div>
+        <div class="countries__info-div">
+            <h2 class="countries__country-name">{{name}}</h2>
+            <div class="countries__country-divs">
+                <div class="countries__country-info">
+                    <p class="countries__country-item"><span>Native name:</span><span class="countries__country-text">{{nativeName}}</span></p>
+                    <p class="countries__country-item"><span>Population:</span><span class="countries__country-text">{{population}}</span></p>
+                    <p class="countries__country-item"><span>Region:</span><span class="countries__country-text">{{region}}</span></p>
+                    <p class="countries__country-item"><span>Subregion:</span><span class="countries__country-text">{{subregion}}</span></p>
+                    <p class="countries__country-item"><span>Capital:</span><span class="countries__country-text">{{capital}}</span></p>
+                </div>
+                <div class="countries__country-info">
+                    <p class="countries__country-item"><span>Top Level Domain:</span><span class="countries__country-text">{{topLevelDomain}}</span></p>
+                    <div class="countries__currency-div">
+                        <p class="countries__country-item"><span>Currencies:</span></p>
+                        <ul class="countries__country-text countries__currency-list"></ul>
+                    </div>
+                    <div class="countries__language-div">
+                        <p class="countries__country-item"><span>Languages:</span></p>
+                        <ul class="countries__country-text countries__language-list"></ul>
+                    </div>
+                </div>
+            </div>
+           <div class="countries__border-countries">
+               <p class="countries__border-text">Border Countries</p>
+               <ul class="countries__border-list">
+                   
+               </ul>
+           </div>
+        </div>
+
+        {{/}}
+    </script>
+
+    <script id="currencyTemplate" type="text/ractive">
+        {{#currency}}
+            <li class="countries__currency-item">{{currency}}</li>
+        {{/}}
+    </script>
+
+    <script id="languageTemplate" type="text/ractive">
+        {{#language}}
+            <li class="countries__language-item">{{language}}</li>
+        {{/}}
+    </script>
+
+    <script id="borderTemplate" type="text/ractive">
+        {{#each border}}
+        <li class="countries__border-item">
+            <a href="detail.html" class="countries__border-link" data-name={{name}}>{{name}}</a>
+         </li>
+        {{/each}}
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
+    <script src="details.js"></script>
+</body>
+</html>

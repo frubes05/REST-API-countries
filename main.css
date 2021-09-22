@@ -1,0 +1,522 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  min-height: calc(100vh - 130px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 1225px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 50px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.header__dark {
+  background: #2b3945;
+}
+.header__light {
+  background: white;
+}
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+.header__text {
+  font-size: 30px;
+  color: white;
+  font-weight: 800;
+}
+.header__text--light {
+  font-size: 30px;
+  color: black;
+  font-weight: 800;
+}
+.header__mode {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: inherit;
+  border: none;
+  padding: 0px;
+  border-radius: none;
+  color: black;
+  cursor: pointer;
+  color: white;
+}
+.header__mode-text {
+  font-size: 20px;
+}
+.header__mode svg {
+  height: 1rem;
+  fill: white;
+  transform: rotate(-45deg);
+}
+.header__mode--light {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: inherit;
+  border: none;
+  padding: 0px;
+  border-radius: none;
+  color: black;
+  cursor: pointer;
+  color: black;
+}
+.header__mode--light svg {
+  height: 1rem;
+  fill: black;
+  transform: rotate(-45deg);
+}
+
+.countries {
+  padding: 50px 0;
+}
+.countries__light {
+  background: #fafafa;
+}
+.countries__dark {
+  background: #2b3945;
+}
+.countries__country-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: normal;
+  gap: 20px;
+}
+.countries__country-divs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: normal;
+  gap: 100px;
+}
+.countries__currency-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: normal;
+  gap: 10px;
+}
+.countries__currency-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: normal;
+  gap: 0px;
+}
+.countries__language-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: normal;
+  gap: 10px;
+}
+.countries__language-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: normal;
+  gap: 0px;
+}
+.countries__filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  padding-bottom: 50px;
+}
+.countries__filter-search {
+  position: relative;
+}
+.countries__filter-list {
+  outline: none;
+  border: none;
+  color: white;
+  background: #2b3945;
+  position: relative;
+  border-radius: 5px;
+}
+.countries__filter-list:focus-within .countries__filter-div {
+  display: block;
+}
+.countries__filter-btn {
+  width: 180px;
+  background: inherit;
+  border: none;
+  padding: 10px 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.countries__filter-btn--light {
+  width: 180px;
+  background: inherit;
+  border: none;
+  padding: 10px 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background: white;
+  color: black;
+}
+.countries__filter-div {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background: #2b3945;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.countries__filter-div--light {
+  background: white;
+  color: black;
+}
+.countries__filter-regions {
+  background: inherit;
+  border: none;
+  padding: 10px;
+  border-radius: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+.countries__filter-regions--light {
+  background: inherit;
+  border: none;
+  padding: 10px;
+  border-radius: none;
+  color: black;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+.countries__filter-item:hover {
+  background: #2b3945;
+  border-radius: 5px;
+}
+.countries__filter-item--light:hover {
+  background: #fafafa;
+  border-radius: 5px;
+}
+.countries__back-btn {
+  width: 180px;
+  background: inherit;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.countries__back-btn svg {
+  fill: white;
+}
+.countries__back-btn--light {
+  width: 180px;
+  background: inherit;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.countries__back-btn--light svg {
+  fill: black;
+}
+.countries__svg {
+  position: absolute;
+  right: 5px;
+  height: 0.8rem;
+  fill: white;
+  top: 12px;
+  cursor: pointer;
+}
+.countries__svg--light {
+  fill: black;
+}
+.countries__search {
+  width: 400px;
+  padding: 10px 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #2b3945;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.countries__search::placeholder {
+  font-size: 14px;
+  color: white;
+}
+.countries__search-icon {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  height: 1rem;
+  fill: white;
+}
+.countries__search-icon--light {
+  fill: black;
+}
+.countries__search--light {
+  background: white;
+  color: black;
+}
+.countries__search--light::placeholder {
+  font-size: 14px;
+  color: black;
+}
+.countries__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 50px;
+}
+.countries__info-div {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  gap: 50px;
+}
+.countries__image {
+  height: 300px;
+  object-fit: contain;
+}
+.countries__border-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  align-self: flex-start;
+}
+.countries__border-text--light {
+  color: black;
+}
+.countries__border-countries {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.countries__border-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-template-rows: repeat(6, 1fr);
+}
+.countries__border-item {
+  grid-column: span 1;
+  display: inline-block;
+}
+.countries__border-link {
+  background: #2b3945;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  color: white;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.countries__border-link--light {
+  background: #fafafa;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  color: black;
+}
+.countries__currency-item {
+  font-size: 14px;
+  font-weight: bold;
+}
+.countries__language-item {
+  font-size: 14px;
+  font-weight: bold;
+}
+.countries__border-link {
+  font-weight: bold;
+  text-align: center;
+}
+.countries__country-wrapper {
+  width: 100%;
+  height: 350px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.countries__country-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  gap: 10px;
+  font-size: 20px;
+}
+.countries__country-wrapper--light {
+  background: white;
+}
+.countries__country-wrapper--dark {
+  background: #2b3945;
+}
+.countries__country-div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  gap: 5px;
+}
+.countries__country-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px 5px 0 0;
+}
+.countries__country-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+.countries__country-item--light {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.countries__country-name {
+  padding: 10px 0;
+  color: white;
+  font-size: 24px;
+  font-weight: 800;
+}
+.countries__country-name--light {
+  color: black;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+.countries__country-text {
+  align-self: center;
+  font-size: 14px;
+  font-weight: 300px;
+  color: white;
+}
+.countries__country-text--light {
+  align-self: center;
+  font-size: 14px;
+  font-weight: 300px;
+  color: black;
+}
+
+/*# sourceMappingURL=main.css.map */
