@@ -1,0 +1,358 @@
+.countries {
+  padding: 50px 0;
+
+  &__light {
+    background: $bg-white;
+  }
+
+  &__dark {
+    background: $bg-dark-blue;
+  }
+
+  &__country-information {
+    @include flex($justify-content: space-between, $gap: 20px);
+  }
+
+  &__country-divs {
+    @include flex($justify-content: space-between, $gap: 100px);
+  }
+
+  &__currency-div {
+    @include flex($justify-content: flex-start, $gap: 10px);
+  }
+
+  &__currency-list {
+    @include flex($justify-content: flex-start);
+  }
+
+  &__language-div {
+    @include flex($justify-content: flex-start, $gap: 10px);
+  }
+
+  &__language-list {
+    @include flex($justify-content: flex-start);
+  }
+
+  &__filter {
+    @include flex($justify-content: space-between, $align-items: center);
+    padding-bottom: 50px;
+
+    &-search {
+      position: relative;
+    }
+
+    &-list {
+      outline: none;
+      border: none;
+      color: $text-color-white;
+      background: $bg-dark-blue;
+      position: relative;
+      border-radius: 5px;
+
+      &:focus-within .countries__filter-div {
+        display: block;
+      }
+    }
+
+    &-btn {
+      width: 180px;
+      @include button($padding: 10px 0, $color: $text-color-white, $border-radius: 5px);
+      text-align: left;
+      padding-left: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+      &--light {
+        width: 180px;
+        @include button($padding: 10px 0, $color: $text-color-white, $border-radius: 5px);
+        text-align: left;
+        padding-left: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        background: $bg-lighter-white;
+        color: $text-color-black;
+      }
+    }
+
+    &-div {
+      display: none;
+      position: absolute;
+      top: 50px;
+      background: $bg-dark-blue;
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+      &--light {
+        background: $bg-lighter-white;
+        color: $text-color-black;
+      }
+    }
+
+    &-regions {
+      @include button($padding: 10px, $color: $text-color-white);
+      width: 100%;
+      text-align: left;
+
+      &--light {
+        @include button($padding: 10px, $color: $text-color-black);
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    &-item {
+      &:hover {
+        background: $bg-dark-blue;
+        border-radius: 5px;
+      }
+
+      &--light {
+        &:hover {
+          background: $bg-white;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  &__back-btn {
+    width: 180px;
+    @include button($padding: 10px, $color: $text-color-white, $border-radius: 5px);
+    @include flex($justify-content: space-between, $align-items: center);
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    svg {
+      fill: $text-color-white;
+    }
+
+    &--light{
+      width: 180px;
+      @include button($padding: 10px, $color: $text-color-black, $border-radius: 5px);
+      @include flex($justify-content: space-between, $align-items: center);
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+      svg {
+        fill: $text-color-black;
+      }
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    right: 5px;
+    height: 0.8rem;
+    fill:$text-color-white;
+    top: 12px;
+    cursor: pointer;
+
+    &--light {
+      fill: $text-color-black;
+    }
+  }
+
+  &__search {
+    width: 400px;
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: $bg-dark-blue;
+    color: $text-color-white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    &::placeholder {
+      font-size: 14px;
+      color: $text-color-white;
+    }
+
+    &-icon {
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      height: 1rem;
+      fill: $text-color-white;
+
+      &--light {
+        fill: $text-color-black;
+      }
+    }
+
+    &--light {
+      background: $bg-lighter-white;
+      color: $text-color-black;
+
+      &::placeholder {
+        font-size: 14px;
+        color: $text-color-black;
+      }
+    }
+  }
+
+  &__list {
+    @include grid($grid-template-columns: repeat(4, 1fr), $grid-gap: 50px);
+  }
+
+  &__info-div {
+    align-self: center;
+    @include flex($flex-direction: column, $gap: 50px);
+  }
+
+  &__image {
+    height: 300px;
+    object-fit: contain;
+  }
+
+  &__border {
+    &-text {
+      font-size: 16px;
+      font-weight: bold;
+      color: $text-color-white;
+      align-self: flex-start;
+
+      &--light{
+        color: $text-color-black;
+      }
+    }
+
+    &-countries {
+      @include flex(
+        $justify-content: flex-start,
+        $gap: 10px,
+        $align-items: center
+      );
+    }
+
+    &-list {
+      @include grid($grid-template-columns: repeat(4, 1fr), $grid-gap: 10px);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    &-item {
+      grid-column: span 1;
+      display: inline-block;
+    }
+
+    &-link {
+      @include link(
+        $padding: 10px 10px,
+        $color: $text-color-white,
+        $border-radius: 5px,
+        $bg: $bg-dark-blue
+      );
+      white-space: nowrap;
+      display: block;
+      width: 100%;
+      font-size: 14px;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+      &--light{
+        @include link(
+        $padding: 10px 10px,
+        $color: $text-color-black,
+        $border-radius: 5px,
+        $bg:$bg-white
+      );
+      }
+    }
+  }
+
+  &__currency-item{
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__language-item{
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__border-link{
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__country {
+    &-wrapper {
+      width: 100%;
+      height: 350px;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &-info {
+      @include flex($flex-direction: column, $gap: 10px);
+      font-size: 20px;
+    }
+
+    &-wrapper--light {
+      background: $bg-lighter-white;
+    }
+
+    &-wrapper--dark {
+      background: $bg-dark-blue;
+    }
+
+    &-div {
+      padding: 20px;
+      @include flex($flex-direction: column, $gap: 5px);
+    }
+
+    &-image {
+      width: 100%;
+      height: 150px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    &-item {
+      @include flex(
+        $justify-content: flex-start,
+        $align-items: center,
+        $gap: 10px
+      );
+      color: $text-color-white;
+      font-size: 16px;
+      font-weight: 600;
+
+      &--light {
+        color:$text-color-black;
+        @include flex(
+          $justify-content: flex-start,
+          $align-items: center,
+          $gap: 10px
+        );
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    &-name {
+      padding: 10px 0;
+      color: $text-color-white;
+      font-size: 24px;
+      font-weight: 800;
+
+      &--light {
+        color: $text-color-black;
+        padding: 10px 0;
+        font-size: 24px;
+        font-weight: 800;
+      }
+    }
+
+    &-text {
+      align-self: center;
+      font-size: 14px;
+      font-weight: 300px;
+      color: $text-color-white;
+
+      &--light {
+        align-self: center;
+        font-size: 14px;
+        font-weight: 300px;
+        color: $text-color-black;
+      }
+    }
+  }
+}

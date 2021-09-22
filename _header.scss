@@ -1,0 +1,56 @@
+.header{
+    padding: 50px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.4);
+
+    &__dark{
+        background: $bg-dark-blue;
+    }
+
+    &__light{
+        background: $bg-lighter-white;
+    }
+
+    &__wrapper{
+        @include flex($justify-content:space-between,$align-items:center);
+    }
+
+    &__text{
+        font-size: 30px;
+        color: $text-color-white;
+        font-weight: 800;
+
+        &--light{
+            font-size: 30px;
+            color: $text-color-black;
+            font-weight: 800; 
+        }
+    }
+
+    &__mode{
+        @include flex($justify-content:center,$align-items:center,$gap:10px);
+        @include button();
+        color: $text-color-white;
+
+        &-text{
+            font-size: 20px;
+        }
+
+        svg{
+            height: 1rem;
+            fill: $text-color-white;
+            transform: rotate(-45deg);
+        }
+
+        &--light{
+            @include flex($justify-content:center,$align-items:center,$gap:10px);
+            @include button();
+            color: $text-color-black;
+
+            svg{
+                height: 1rem;
+                fill: $text-color-black;
+                transform: rotate(-45deg); 
+            }
+        }
+    }
+}
