@@ -1,0 +1,23 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    min-height: 100vh;
+}
+
+main{
+    min-height: calc(100vh - 130px);
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrapper{
+    max-width: 1225px;
+    margin: 0 auto;
+}
